@@ -1,49 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Blank sky</title>
+    <style>
+      :root {
+        --gradient-start: #fff;
+        --gradient-end: #fff;
+      }
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Blank sky</title>
-	<style>
-		:root {
-			--gradient-start: hsl(10, 50%, 30%);
-			--gradient-end: hsl(50, 50%, 30%);
-		}
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        font-size: 1rem;
+        color: hsla(0, 100%, 100%, 0.85);
+      }
 
-		body {
-			min-height: 100vh;
-			background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
-			background-size: cover;
-		}
-	</style>
-	<script>
-		function rnd(min, max) {
-			return Math.floor(Math.random() * (max - min + 1)) + min;
-		}
+      body {
+        overflow: hidden;
+        position: relative;
+        height: 100dvh;
+        background: linear-gradient(
+          to bottom,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        background-size: cover;
+      }
 
-		const MIN_HUE = 200;
-		const MAX_HUE = 330;
-		const MIN_SATURATION = 35;
-		const MAX_SATURATION = 50;
-		const MIN_LIGHTNESS = 45;
-		const MAX_LIGHTNESS = 85;
+      a {
+        text-decoration: underline;
+      }
 
-		const root = document.documentElement;
+      .info {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
 
-		const startHue = rnd(MIN_HUE, MAX_HUE);
-		const startSaturation = rnd(MIN_SATURATION, MAX_SATURATION);
-		const startLightness = rnd(MIN_LIGHTNESS + (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2, MAX_LIGHTNESS);
-		root.style.setProperty('--gradient-start', `hsl(${startHue}, ${startSaturation}%, ${startLightness}%)`);
+      #blank:target .info {
+        display: none;
+      }
 
-		const endHue = rnd(MIN_HUE, MAX_HUE);
-		const endSaturation = rnd(startSaturation, Math.min(startSaturation + 30, MAX_SATURATION));
-		const endLightness = rnd(MIN_LIGHTNESS, MAX_LIGHTNESS - (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2);
-		root.style.setProperty('--gradient-end', `hsl(${endHue}, ${endSaturation}%, ${endLightness}%)`);
-	</script>
-</head>
+      header {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.5ch;
+      }
+    </style>
+    <script>
+      function rnd(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-<body>
-</body>
+      const MIN_HUE = 200;
+      const MAX_HUE = 330;
+      const MIN_SATURATION = 35;
+      const MAX_SATURATION = 50;
+      const MIN_LIGHTNESS = 45;
+      const MAX_LIGHTNESS = 85;
 
+      const root = document.documentElement;
+
+      const startHue = rnd(MIN_HUE, MAX_HUE);
+      const startSaturation = rnd(MIN_SATURATION, MAX_SATURATION);
+      const startLightness = rnd(
+        MIN_LIGHTNESS + (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2,
+        MAX_LIGHTNESS,
+      );
+      root.style.setProperty(
+        '--gradient-start',
+        `hsl(${startHue}, ${startSaturation}%, ${startLightness}%)`,
+      );
+
+      const endHue = rnd(MIN_HUE, MAX_HUE);
+      const endSaturation = rnd(
+        startSaturation,
+        Math.min(startSaturation + 30, MAX_SATURATION),
+      );
+      const endLightness = rnd(
+        MIN_LIGHTNESS,
+        MAX_LIGHTNESS - (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2,
+      );
+      root.style.setProperty(
+        '--gradient-end',
+        `hsl(${endHue}, ${endSaturation}%, ${endLightness}%)`,
+      );
+    </script>
+  </head>
+
+  <body id="blank">
+    <div class="info">
+      <header>
+        <h1>Blank sky.</h1>
+        <p>
+          Beautiful twilight sky inspired new tab page replacement for your
+          browser.
+        </p>
+      </header>
+      <main>
+        <p>
+          To install, add
+          <a href="#blank">https://sky.morning.photos#blank</a> as your new tab
+          page.
+        </p>
+      </main>
+      <footer>
+        <p>
+          Made with tacos and coffee in Guadalajara, Mexico in 2024 by
+          <a
+            href="https://sapegin.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Artem Sapegin</a
+          >
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>
