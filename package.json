@@ -1,0 +1,19 @@
+{
+    "name": "blank-sky",
+    "private": true,
+    "author": {
+      "name": "Artem Sapegin",
+      "url": "https://sapegin.me/"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sapegin/blank-sky.git"
+    },
+    "scripts": {
+      "format": "prettier --log-level warn --write --ignore-unknown \"**/*.*\""
+    },
+    "devDependencies": {
+      "prettier": "^3.2.5"
+    }
+  }
