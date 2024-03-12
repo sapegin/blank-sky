@@ -31,6 +31,7 @@
           'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
         font-size: 1rem;
         color: hsla(0, 100%, 100%, 0.85);
+        text-shadow: 0 0 3px hsla(0, 0%, 0%, 0.25);
       }
 
       body {
@@ -98,8 +99,8 @@
         const startHue = rnd(MIN_HUE, MAX_HUE);
         const startSaturation = rnd(MIN_SATURATION, MAX_SATURATION);
         const startLightness = rnd(
-          MIN_LIGHTNESS + (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2,
-          MAX_LIGHTNESS,
+          MIN_LIGHTNESS,
+          MAX_LIGHTNESS - (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2,
         );
         document.body.style.setProperty(
           '--gradient-start',
@@ -112,8 +113,8 @@
           Math.min(startSaturation + 30, MAX_SATURATION),
         );
         const endLightness = rnd(
-          MIN_LIGHTNESS,
-          MAX_LIGHTNESS - (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2,
+          MIN_LIGHTNESS + (MAX_LIGHTNESS - MIN_LIGHTNESS) / 2,
+          MAX_LIGHTNESS,
         );
         document.body.style.setProperty(
           '--gradient-end',
