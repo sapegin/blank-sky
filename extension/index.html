@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>☾</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <style>
+      @property --gradient-start {
+        syntax: '<color>';
+        initial-value: #fff;
+        inherits: false;
+      }
+      @property --gradient-end {
+        syntax: '<color>';
+        initial-value: #fff;
+        inherits: false;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overflow: hidden;
+        position: relative;
+        height: 100dvh;
+        background-image: linear-gradient(
+          to bottom,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        background-size: cover;
+        transition:
+          --gradient-start 10s linear,
+          --gradient-end 10s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
