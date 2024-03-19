@@ -44,9 +44,6 @@
           var(--gradient-end)
         );
         background-size: cover;
-        transition:
-          --gradient-start 10s linear,
-          --gradient-end 10s linear;
       }
 
       a {
@@ -88,8 +85,8 @@
       const MAX_HUE = 330;
       const MIN_SATURATION = 35;
       const MAX_SATURATION = 50;
-      const MIN_LIGHTNESS = 45;
-      const MAX_LIGHTNESS = 85;
+      const MIN_LIGHTNESS = 40;
+      const MAX_LIGHTNESS = 75;
 
       function rnd(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -120,9 +117,26 @@
           '--gradient-end',
           `hsl(${endHue}, ${endSaturation}%, ${endLightness}%)`,
         );
+
+        // Show the first gradient immediately,
+        // and enable transition for the future colors
+        setTimeout(() => {
+          document.body.style.transition =
+            '--gradient-start 10s linear, --gradient-end 10s linear';
+        }, 0);
+      }
+
+      function enableTransition() {
+        // Show the first gradient immediately,
+        // and enable transition for the future colors
+        setTimeout(() => {
+          document.body.style.transition =
+            '--gradient-start 10s linear, --gradient-end 10s linear';
+        }, 0);
       }
 
       updateBackground();
+      enableTransition();
       setInterval(updateBackground, 10000);
     </script>
 
