@@ -1,19 +1,20 @@
 {
-    "name": "blank-sky",
-    "private": true,
-    "author": {
-      "name": "Artem Sapegin",
-      "url": "https://sapegin.me/"
-    },
-    "license": "MIT",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/sapegin/blank-sky.git"
-    },
-    "scripts": {
-      "format": "prettier --log-level warn --write --ignore-unknown \"**/*.*\""
-    },
-    "devDependencies": {
-      "prettier": "^3.2.5"
-    }
+  "name": "blank-sky",
+  "private": true,
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "https://sapegin.me/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sapegin/blank-sky.git"
+  },
+  "scripts": {
+    "prepare-extension": "rm extension.zip > /dev/null 2>&1; cd extension; zip -rv ../extension.zip * -x '*.DS_Store'",
+    "format": "prettier --log-level warn --write --ignore-unknown \"**/*.*\""
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
   }
+}
