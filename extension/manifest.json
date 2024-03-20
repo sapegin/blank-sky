@@ -11,5 +11,11 @@
   },
   "chrome_url_overrides": {
     "newtab": "index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "blank-sky@sapegin.me",
+      "strict_min_version": "109.0"
+    }
   }
 }
