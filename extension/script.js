@@ -42,7 +42,7 @@ function enableTransition() {
   setTimeout(() => {
     document.body.style.transition =
       '--gradient-start 10s linear, --gradient-end 10s linear';
-  }, 0);
+  }, 9000);
 }
 
 updateBackground();
