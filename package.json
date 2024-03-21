@@ -11,10 +11,11 @@
     "url": "https://github.com/sapegin/blank-sky.git"
   },
   "scripts": {
-    "prepare-extension": "rm extension.zip > /dev/null 2>&1; cd extension; zip -rv ../extension.zip * -x '*.DS_Store'",
+    "prepare-extensions": "node scripts/build.mjs",
     "format": "prettier --log-level warn --write --ignore-unknown \"**/*.*\""
   },
   "devDependencies": {
+    "adm-zip": "^0.5.12",
     "prettier": "^3.2.5"
   }
 }
